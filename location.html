@@ -1,0 +1,182 @@
+html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Location Viewer</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 30px;
+      background: #f4f4f9;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      direction: ltr;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 13px;
+      border: none;
+      border-radius: 8px;
+      background: #1976d2;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #125ca1;
+    }
+
+    #map {
+      width: 100%;
+      height: 400px;
+      margin-top: 25px;
+      border: 0;
+      border-radius: 10px;
+      display: none;
+    }
+
+    #error {
+      color: #d32f2f;
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h2>عرض الموقع على الخريطة</h2>
+
+    <label for="latitude">
+      Latitude
+    </label>
+
+    <input
+      id="latitude"
+      type="number"
+      step="any"
+      placeholder="مثال: 30.0444"
+    >
+
+    <label for="longitude">
+      Longitude
+    </label>
+
+    <input
+      id="longitude"
+      type="number"
+      step="any"
+      placeholder="مثال: 31.2357"
+    >
+
+    <button onclick="showLocation()">
+      عرض الموقع
+    </button>
+
+    <p id="error"></p>
+
+    <iframe
+      id="map"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+
+  <script>
+
+    function showLocation() {
+
+      const latitude =
+        document.getElementById("latitude").value;
+
+      const longitude =
+        document.getElementById("longitude").value;
+
+      const error =
+        document.getElementById("error");
+
+      const map =
+        document.getElementById("map");
+
+      error.textContent = "";
+
+      if (!latitude || !longitude) {
+        error.textContent =
+          "من فضلك أدخل Latitude و Longitude";
+
+        return;
+      }
+
+      const lat = Number(latitude);
+      const lng = Number(longitude);
+
+      if (
+        isNaN(lat) ||
+        isNaN(lng) ||
+        lat < -90 ||
+        lat > 90 ||
+        lng < -180 ||
+        lng > 180
+      ) {
+        error.textContent =
+          "الإحداثيات غير صحيحة";
+
+        return;
+      }
+
+      map.src =
+        `https://www.google.com/maps?q=${lat},${lng}&z=17&output=embed`;
+
+      map.style.display = "block";
+    }
+
+  </script>
+
+</body>
+
+</html>
+
